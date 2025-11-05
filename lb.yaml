@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-svc
+  labels:
+    env: demo
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80        # Pod port
+  selector:
+    env: demo
+    type: frontend
+    
